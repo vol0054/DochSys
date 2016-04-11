@@ -32,7 +32,7 @@ class SignPresenter extends BasePresenter
 			$this->database->query("INSERT dochazka", [
 					'id_pracovnik' => $this->user->id,
 					'datum' => date('Y-m-d'),
-					'prichod' => date("H:i:s"),
+					'prichod' => date('Y-m-d H:i:s'),
 					]);
 			$form->getPresenter()->redirect('Homepage:');
 		};

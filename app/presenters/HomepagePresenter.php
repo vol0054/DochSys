@@ -22,10 +22,11 @@ class HomepagePresenter extends SecuredPresenter
 		$this->template->date = date('Y.m.d, H:i:s');
 		$row = $this->database->table('dochazka')
 				->where('id_pracovnik', $this->user->identity->id)
-				->where('datum', $datum)->fetch();
-		
-		//dump($row->prichod);exit;
-		$this->template->prichod = $row;
+				->where('datum', $datum)
+				->order('id DESC')
+				->fetch();
+//		dump($row);exit;
+		$this->template->result = $row;
 	}
 
 	public function handleLaunchStart()

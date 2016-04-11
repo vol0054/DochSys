@@ -9,8 +9,9 @@
 	<a n:href="logout!"><button> Odhlásit ze systému</button></a>
 	<h2>Dobrý den, <strong>{$user->identity->jmeno} {$user->identity->prijmeni}</strong></h2>
 	<p>dnes je: {$date}</p>
-	<p>čas přihlášení: {*$prichod->prichod*}</p>
-	
+	<p>čas příchodu: {$result->prichod|date:'H:i:s'}</p>
+	<p>zacatek obedu: {$result->obed_start|date:'H:i:s'}</p>
+	<p>konec obedu: {$result->obed_end|date:'H:i:s'}</p>
 	<div class="boxes">
 		<div>
 			<a n:href="launchStart!"><button> Pauza oběd - Start</button></a>
