@@ -10,16 +10,13 @@ use Nette\Security\User;
 class SignForm extends Control
 {
 
-	/** @var FormFactory */
-	private $factory;
-
 	/** @var User */
 	private $user;
 
-	public function __construct(FormFactory $factory, User $user)
+	public function __construct(User $user)
 	{
-		$this->factory = $factory;
 		$this->user = $user;
+
 	}
 
 	public function render()
@@ -34,14 +31,15 @@ class SignForm extends Control
 		$form = new Form;
 		
 		$form->addText('username', 'Username:')
-				->setRequired('Please enter your username.');
+				->setRequired('Prosím, vyplňte své osobní číslo');
 
 		$form->addPassword('password', 'Password:')
-				->setRequired('Please enter your password.');
+				->setRequired('prosím vyplňte heslo');
 
 		$form->addCheckbox('remember', 'Keep me signed in');
 
-		$form->addSubmit('send', 'Sign in');
+		$form->addSubmit('send', 'Přihlásit')
+				->setAttribute('class','btn btn-default');
 
 		$form->onSuccess[] = $this->formSucceeded;
 		return $form;
