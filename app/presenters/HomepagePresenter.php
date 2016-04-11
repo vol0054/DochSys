@@ -20,12 +20,11 @@ class HomepagePresenter extends SecuredPresenter
 	{
 		$datum = date('Y-m-d');
 		$this->template->date = date('Y.m.d, H:i:s');
-		$select = $this->database->table('dochazka')
+		$row = $this->database->table('dochazka')
 				->where('id_pracovnik', $this->user->identity->id)
-				->where('datum', $datum);
-		$row = $select->fetch();
-		$row->prichod;
-		//dump($row);exit;
+				->where('datum', $datum)->fetch();
+		
+		//dump($row->prichod);exit;
 		$this->template->prichod = $row;
 	}
 

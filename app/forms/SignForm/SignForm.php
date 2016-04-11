@@ -27,13 +27,12 @@ class SignForm extends Control
 		$this->template->setFile(__DIR__.'/@signForm.latte');
 		$this->template->render();
 	}
-	/**
-	 * @return Form
-	 */
-	public function createComponent()
+
+	
+	public function createComponentForm()
 	{
 		$form = new Form;
-		$form = $this->factory->create();
+		
 		$form->addText('username', 'Username:')
 				->setRequired('Please enter your username.');
 
