@@ -13,15 +13,18 @@
 	<p>zacatek obedu: {$result->obed_start|date:'H:i:s'}</p>
 	<p>konec obedu: {$result->obed_end|date:'H:i:s'}</p>
 	<div class="boxes">
-		<div>
-			<a n:href="launchStart!"><button class="btn btn-success"> Pauza oběd - Start</button></a>
-		</div>
-		<div>
-			<a n:href="launchStop!" ><button class="btn btn-danger"> Pauza oběd - Stop</button></a>
-		</div>
-		<div>
-			
+		<div class="row">
+			<div class="col-lg-6">
+				<div>
+					<a n:href="launchStart!"><button class="btn btn-success"> Pauza oběd - Start</button></a>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div>
+					<a n:href="launchStop!" ><button class="btn btn-danger"> Pauza oběd - Stop</button></a>
+				</div>
+			</div>
+
 		</div>
 	</div>
-
-	<h2>We hope you enjoy this framework!</h2>
+</div>

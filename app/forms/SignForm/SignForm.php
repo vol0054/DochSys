@@ -56,7 +56,7 @@ class SignForm extends Control
 		try{
 			$this->user->login($values->username, $values->password);
 		}catch(Nette\Security\AuthenticationException $e){
-			$form->addError('The username or password you entered is incorrect.');
+			$form->addError('Osobní číslo nebo heslo je nesprávné.');
 		}
 	}
 
