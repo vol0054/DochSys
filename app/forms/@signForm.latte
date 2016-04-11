@@ -1,0 +1,23 @@
+{form form}
+	<div n:foreach="$form->getErrors() as $error">
+		<p class="callout alert">{$error}</p>
+	</div>
+	<label>jmeno:
+		{input name}
+	</label>
+	<label>prijmeni:
+		{input surname}
+	</label>
+	<br>
+	<label> heslo:
+		{input password}
+	</label>
+	<br>
+	<label> heslo znovu:
+		{input password2}
+	</label>
+	<br>
+	<label>
+		{input submit}
+	</label>
+{/form}
